@@ -1,5 +1,5 @@
 import cohere from 'cohere-ai';
-const apiKey = 'vt5tKU71mkuIt3BHOYF4uoS5MICkK82X0OlNkdHv';
+const apiKey = process.env.COHERENCE_API_KEY;
 
 cohere.init(apiKey);
 async function classify(input) {
@@ -8,6 +8,7 @@ async function classify(input) {
     inputs: [input],
   });
 
+  console.log(classification);
   return classification.body.classifications[0].prediction;
 }
 

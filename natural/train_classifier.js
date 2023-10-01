@@ -1,7 +1,8 @@
-var natural = require('natural');
-const fs = require('fs');
-const path = require('path');
-const csv = require('fast-csv');
+import natural from 'natural';
+import fs from 'fs';
+import path from 'path';
+import csv from 'fast-csv';
+import { fileURLToPath } from 'url';
 
 var classifier = new natural.BayesClassifier(natural.PorterStemmerRu);
 
@@ -23,7 +24,13 @@ function train() {
 console.log('adding quotation');
 // let i = 1;
 // fs.createReadStream(path.resolve(__dirname, '../', 'labeled_quotations.csv'))
-fs.createReadStream(path.resolve(__dirname, '../', 'frases_teste.csv'))
+fs.createReadStream(
+  path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    '../',
+    'frases_teste.csv'
+  )
+)
   .pipe(csv.parse({ headers: true }))
   .on('error', (error) => console.error(error))
   .on('data', (row) => {

@@ -5,7 +5,10 @@ import { fileURLToPath } from 'url';
 async function newClassifier() {
   return new Promise((r, rej) => {
     natural.BayesClassifier.load(
-      resolve(dirname(fileURLToPath(import.meta.url)), 'classifier2.json'),
+      resolve(
+        dirname(fileURLToPath(import.meta.url)),
+        'classifier_simple_naive.json'
+      ),
       null,
       function (err, _classifier) {
         if (err) {
