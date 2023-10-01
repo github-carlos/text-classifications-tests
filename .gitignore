@@ -2,3 +2,4 @@ node_modules
 .vscode
 .tap
 *lock.json
+.env

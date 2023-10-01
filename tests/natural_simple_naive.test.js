@@ -1,20 +1,22 @@
-import 'dotenv/config';
 import fs from 'fs';
 import assert from 'node:assert';
 import test from 'node:test';
 import { parse } from 'csv-parse/sync';
 
-import cohereClassify from '../cohere/custom_model.js';
+import newNaturalClassifier from '../natural/simple_naive_bayes.js';
 
 const phrases = parse(fs.readFileSync('quotation_phrases_test.csv', 'utf8'), {
   columns: true,
   skip_empty_lines: true,
 });
 
-test.skip.describe('Cohere custom model tests', () => {
+test.describe('Natural.js Simple Naive tests', (t) => {
   for (const phrase of phrases) {
     test.it(`${phrase.phrase}`, async () => {
-      const classification = await cohereClassify(phrase.phrase);
+      const naturalClassification = await newNaturalClassifier();
+      const classification = await naturalClassification.classify(
+        phrase.phrase
+      );
       assert.equal(
         classification,
         phrase.label,
