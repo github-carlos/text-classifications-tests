@@ -1,0 +1,18 @@
+phrase,label
+quero fazer uma reserva parao dia 30,cotacao
+I would like to book a room next sunday,cotacao
+Hi i want to know about rooms,nao_cotacao
+Hi tell me about the hotel,nao_cotacao
+quanto ta a diaria,cotacao
+aceitam pets?,nao_cotacao
+valor dia 10 ao dia 12?,cotacao
+voces tem sabonete nos quartos?,nao_cotacao
+a piscina tem cloro?,nao_cotacao
+qual o melhor quarto de voces?,nao_cotacao
+nao gostei do quarto,nao_cotacao
+os quarto tem ar condicionado?,nao_cotacao
+esqueci uma coisa no dia 12/10,nao_cotacao
+fiquei no dia 12/10,nao_cotacao
+reserva 2 noites no dia 13/10,cotacao
+fiz uma reserva semana passada e queria saber sobre checkin,nao_cotacao
+tem disponibilidade para o dia das criancas?,cotacao
